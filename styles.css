@@ -451,3 +451,11 @@ textarea:focus-visible {
   top: 12px;
 }
 
+/* Imágenes adaptables a celulares */
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+
+
