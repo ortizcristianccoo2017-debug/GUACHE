@@ -424,3 +424,20 @@ footer p {
         font-size: 27px;
     }
 }
+
+/* Accesibilidad: enlace para saltar al contenido */
+.skip-link {
+  position: absolute;
+  top: -60px;
+  left: 12px;
+  background: #2e7d32;
+  color: white;
+  padding: 12px 18px;
+  z-index: 9999;
+  border-radius: 6px;
+}
+
+.skip-link:focus {
+  top: 12px;
+}
+
