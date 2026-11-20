@@ -437,6 +437,16 @@ footer p {
   border-radius: 6px;
 }
 
+/* Resaltar elementos al navegar con teclado */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible {
+  outline: 3px solid #f4b942;
+  outline-offset: 3px;
+}
+
+
 .skip-link:focus {
   top: 12px;
 }
