@@ -2,9 +2,6 @@
 /* GUACHE - Funciones principales */
 
 // PANEL DE ADMINISTRACIÓN
-/* GUACHE - Funciones principales */
-
-// PANEL DE ADMINISTRACIÓN
 const adminBtn = document.getElementById("adminBtn");
 const adminPanel = document.getElementById("adminPanel");
 
@@ -278,8 +275,7 @@ function mostrarMensajes() {
         contenedor.appendChild(tarjeta);
     });
 }
-
-contactForm.addEventListener("submit", (evento) => {
+contactForm.addEventListener("submit", async (evento) => {
     evento.preventDefault();
 
     const nuevoMensaje = {
@@ -288,13 +284,28 @@ contactForm.addEventListener("submit", (evento) => {
         contenido: mensajeContacto.value.trim()
     };
 
-    const mensajes = obtenerMensajes();
-    mensajes.push(nuevoMensaje);
+    try {
+  const respuesta = await fetch(
+    `${SUPABASE_URL}/rest/v1/mensajes`,
+    {
+      method: "POST",
+      headers: {
+        apikey: SUPABASE_KEY,
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify(nuevoMensaje)
+    }
+  );
 
-    localStorage.setItem(
-        "guacheMensajes",
-        JSON.stringify(mensajes)
-    );
+  if (!respuesta.ok) {
+    throw new Error("No se pudo guardar el mensaje");
+  }
+
+} catch (error) {
+  alert("No se pudo enviar el mensaje. Intenta nuevamente.");
+  console.error(error);
+  return;
+}
 
     contactMessage.textContent =
         "¡Tu mensaje fue registrado correctamente!";
@@ -304,7 +315,4 @@ contactForm.addEventListener("submit", (evento) => {
 });
 
 mostrarMensajes();
-
-
-
 
