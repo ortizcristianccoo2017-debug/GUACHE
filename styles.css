@@ -457,5 +457,22 @@ img {
   height: auto;
 }
 
+/* Formularios adaptables */
+input,
+textarea,
+select {
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+@media (max-width: 600px) {
+  input,
+  textarea,
+  select {
+    font-size: 16px;
+  }
+}
+
+
 
 
