@@ -1,0 +1,243 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="GUACHE: descubre la cultura, historia, fauna y flora de Colombia.">
+    <title>GUACHE | Descubre Colombia</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+    <!-- NAVEGACIÓN -->
+    <header>
+        <nav class="navbar">
+            <a href="#inicio" class="logo">GUACHE<span>.</span></a>
+
+            <ul class="nav-links">
+                <li><a href="#inicio">Inicio</a></li>
+                <li><a href="#categorias">Explorar</a></li>
+                <li><a href="#articulos">Artículos</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+            </ul>
+
+            <button id="adminBtn" class="admin-btn">
+                Administrador
+            </button>
+        </nav>
+    </header>
+
+    <main>
+
+        <!-- PORTADA -->
+        <section id="inicio" class="hero">
+            <div class="hero-content">
+                <p class="subtitle">UN VIAJE POR NUESTRAS RAÍCES</p>
+
+                <h1>Colombia es más de lo que <span>imaginas.</span></h1>
+
+                <p>
+                    Descubre las historias, tradiciones, animales y
+                    paisajes que hacen de Colombia un país extraordinario.
+                </p>
+
+                <a href="#categorias" class="main-btn">
+                    Comenzar a explorar
+                </a>
+            </div>
+        </section>
+
+        <!-- PRESENTACIÓN -->
+        <section class="about">
+            <p class="section-tag">NUESTRA IDENTIDAD</p>
+            <h2>Conoce lo que nos hace únicos</h2>
+            <p>
+                GUACHE es un espacio de divulgación dedicado a compartir
+                y preservar el conocimiento sobre la riqueza natural,
+                histórica y cultural de Colombia.
+            </p>
+        </section>
+
+        <!-- CATEGORÍAS -->
+        <section id="categorias" class="categories">
+            <p class="section-tag">EXPLORA COLOMBIA</p>
+            <h2>Cuatro mundos por descubrir</h2>
+
+            <div class="category-grid">
+
+                <article class="category-card culture">
+                    <div class="category-icon">🎭</div>
+                    <h3>Cultura</h3>
+                    <p>Tradiciones, música, gastronomía y expresiones colombianas.</p>
+                    <a href="#articulos">Descubrir →</a>
+                </article>
+
+                <article class="category-card history">
+                    <div class="category-icon">📜</div>
+                    <h3>Historia</h3>
+                    <p>Conoce los acontecimientos que construyeron nuestro país.</p>
+                    <a href="#articulos">Descubrir →</a>
+                </article>
+
+                <article class="category-card fauna">
+                    <div class="category-icon">🐆</div>
+                    <h3>Fauna</h3>
+                    <p>Descubre los animales que habitan nuestros ecosistemas.</p>
+                    <a href="#articulos">Descubrir →</a>
+                </article>
+
+                <article class="category-card flora">
+                    <div class="category-icon">🌿</div>
+                    <h3>Flora</h3>
+                    <p>Explora la diversidad de plantas y paisajes naturales.</p>
+                    <a href="#articulos">Descubrir →</a>
+                </article>
+
+            </div>
+        </section>
+
+        <!-- ARTÍCULOS -->
+        <section id="articulos" class="articles">
+            <p class="section-tag">CONOCIMIENTO COLOMBIANO</p>
+            <h2>Historias que merecen ser contadas</h2>
+
+            <div class="article-grid">
+
+                <article class="article-card">
+                    <div class="article-image">🌺</div>
+                    <div class="article-info">
+                        <span>CULTURA</span>
+                        <h3>El Carnaval de Barranquilla</h3>
+                        <p>Una de las celebraciones culturales más importantes de Colombia.</p>
+                    </div>
+                </article>
+
+                <article class="article-card">
+                    <div class="article-image">🐦</div>
+                    <div class="article-info">
+                        <span>FAUNA</span>
+                        <h3>El cóndor de los Andes</h3>
+                        <p>Conoce una de las aves emblemáticas de nuestro territorio.</p>
+                    </div>
+                </article>
+
+                <article class="article-card">
+                    <div class="article-image">🌳</div>
+                    <div class="article-info">
+                        <span>FLORA</span>
+                        <h3>La palma de cera</h3>
+                        <p>El árbol nacional y un símbolo de nuestros paisajes andinos.</p>
+                    </div>
+                </article>
+
+            </div>
+        </section>
+
+        <!-- INTELIGENCIA ARTIFICIAL -->
+        <section class="ai-section" id="asistente">
+            <div class="ai-content">
+                <p class="section-tag">TECNOLOGÍA Y CONOCIMIENTO</p>
+                <h2>Pregúntale a GUACHE</h2>
+                <p>
+                    Un asistente informativo para resolver tus dudas
+                    sobre Colombia.
+                </p>
+
+                <div class="chat-box">
+                    <input
+                        type="text"
+                        id="aiQuestion"
+                        placeholder="Ejemplo: ¿Cuál es el árbol nacional?"
+                    >
+                    <button id="askBtn">Consultar</button>
+                    <div id="aiAnswer" aria-live="polite">
+                        Aquí aparecerán las respuestas.
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CONTACTO -->
+        <section id="contacto" class="contact">
+            <p class="section-tag">HABLEMOS</p>
+            <h2>Conecta con GUACHE</h2>
+            <p>¿Tienes una pregunta o sugerencia? Escríbenos.</p>
+
+            <form id="contactForm">
+                <input type="text" placeholder="Tu nombre" required>
+                <input type="email" placeholder="Tu correo electrónico" required>
+                <textarea placeholder="Escribe tu mensaje..." required></textarea>
+                <button type="submit">Enviar mensaje</button>
+            </form>
+            <p id="contactMessage" aria-live="polite"></p>
+        </section>
+
+        
+<!-- INICIO DE SESIÓN DE DEMOSTRACIÓN -->
+<section id="loginPanel" class="admin-panel" hidden>
+    <h2>Acceso al administrador</h2>
+    <p>Ingresa las credenciales de demostración.</p>
+
+    <form id="loginForm">
+        <input
+            id="loginUser"
+            type="text"
+            placeholder="Usuario"
+            autocomplete="username"
+            required
+        >
+
+        <input
+            id="loginPassword"
+            type="password"
+            placeholder="Contraseña"
+            autocomplete="current-password"
+            required
+        >
+
+        <button type="submit">Iniciar sesión</button>
+    </form>
+
+    <p id="loginMessage" aria-live="polite"></p>
+</section>
+
+        <section id="adminPanel" class="admin-panel" hidden>
+            <h2>Panel de administración</h2>
+            <p>Bienvenido al espacio de gestión de GUACHE.</p>
+
+            <form id="articleForm">
+                <input id="articleTitle" type="text"
+                    placeholder="Título del artículo" required>
+
+                <select id="articleCategory" required>
+                    <option value="">Selecciona una categoría</option>
+                    <option value="Cultura">Cultura</option>
+                    <option value="Historia">Historia</option>
+                    <option value="Fauna">Fauna</option>
+                    <option value="Flora">Flora</option>
+                </select>
+
+                <textarea id="articleDescription"
+                    placeholder="Descripción del artículo" required></textarea>
+
+                <button type="submit">Agregar artículo</button>
+            </form>
+
+            <div id="adminArticles"></div>
+        </section>
+
+    </main>
+
+    <!-- PIE DE PÁGINA -->
+    <footer>
+        <a href="#inicio" class="logo">GUACHE<span>.</span></a>
+        <p>Un recorrido por la riqueza de Colombia.</p>
+        <p>© 2026 GUACHE - Proyecto académico.</p>
+    </footer>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
